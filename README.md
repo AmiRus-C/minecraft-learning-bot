@@ -1,5 +1,7 @@
 # Minecraft Learning Bot
 
+![version](https://img.shields.io/badge/version-0.0.1-blue) ![license](https://img.shields.io/badge/license-MIT-brightgreen)
+
 **Версия:** 0.0.1  
 **Автор:** [AmiRus-C](https://github.com/AmiRus-C) (Nicshuz_)
 
