@@ -7,7 +7,7 @@ export const botConfig = {
   // Подключение к серверу
   connection: {
     host: 'localhost',
-    port: 15676,
+    port: HERE_YOUR_PORT,
     username: 'MinecraftAI',
     version: '1.16.5',
     auth: 'offline' // Пиратский сервер (offline-mode)
