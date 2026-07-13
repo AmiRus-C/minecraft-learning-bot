@@ -1,153 +1,160 @@
-# Minecraft Learning Bot
+Minecraft Learning Bot
 
-![version](https://img.shields.io/badge/version-0.0.1-blue) ![license](https://img.shields.io/badge/license-MIT-brightgreen)
+Version: 0.0.1
+Author: AmiRus-C (Nicshuz_)
 
-**Версия:** 0.0.1  
-**Автор:** [AmiRus-C](https://github.com/AmiRus-C) (Nicshuz_)
+An advanced bot for Minecraft version 1.16.5 with self-learning capabilities, personality-driven behavior, and world interaction.
 
-Продвинутый бот для Minecraft версии 1.16.5 с возможностью самообучения, использованием личности и взаимодействием с миром.
+Features
 
-## Особенности
+Personality System
 
-### 🤖 Система Личности
-- **Полностью настраиваемая личность** - имя, описание, черты характера
-- **4 стиля речи** - дружелюбный, формальный, разговорный, мистический
-- **Система эмоций** - счастье, страх, возбуждение, любопытство, раздражение
-- **Память о событиях** - бот помнит свой опыт
-- **Развивающиеся предпочтения** - любимые и нелюбимые действия
+· Fully customizable personality — name, description, character traits
+· 4 speech styles — friendly, formal, casual, mystical
+· Emotion system — happiness, fear, excitement, curiosity, irritation
+· Event memory — the bot remembers its experiences
+· Evolving preferences — favorite and disliked actions
 
-### 🧠 Система Обучения
-- **Q-Learning** - алгоритм обучения с подкреплением
-- **Адаптивное исследование** - бот начинает с исследования, переходя к эксплуатации знаний
-- **Persisting Knowledge** - всё выученное сохраняется между сеансами
-- **Статистика обучения** - отслеживание прогресса
+Learning System
 
-### 🌍 Взаимодействие с Миром
-- **Движение и навигация** - бот может ходить по миру
-- **Атака** - взаимодействие с мобами
-- **Добыча блоков** - сбор ресурсов
-- **Размещение блоков** - строительство
-- **Сбор предметов** - авто-сбор выпавших предметов
+· Q-Learning — reinforcement learning algorithm
+· Adaptive exploration — bot starts with exploration, gradually shifting to knowledge exploitation
+· Persisting Knowledge — all learned data is saved between sessions
+· Learning statistics — progress tracking
 
-### 💬 Система Чата
-- **Динамические сообщения** - ответы зависят от личности бота
-- **Эмоциональное общение** - сообщения отражают настроение
-- **Реактивное поведение** - ответы на сообщения игроков
-- **Статус-репорты** - информирование о состоянии
+World Interaction
 
-## Установка
+· Movement and navigation — the bot can walk around the world
+· Attack — interaction with mobs
+· Block breaking — resource gathering
+· Block placement — building
+· Item collection — auto-collect dropped items
 
-### Требования
-- Node.js 16 или выше
-- Minecraft Server версии 1.16.5 (рекомендуется локальный сервер)
+Chat System
 
-### Шаги установки
+· Dynamic messages — responses depend on the bot's personality
+· Emotional communication — messages reflect the bot's mood
+· Reactive behavior — responses to player messages
+· Status reports — state notifications
+
+Installation
+
+Requirements
+
+· Node.js 16 or higher
+· Minecraft Server version 1.16.5 (local server recommended)
+
+Steps
 
 ```bash
-# Перейти в директорию проекта
+# Navigate to project directory
 cd MinecraftBot
 
-# Установить зависимости
+# Install dependencies
 npm install
 
-# Убедитесь, что Minecraft сервер запущен на localhost:25565
-# Для локального сервера: java -Xmx1024M -Xms1024M -jar server.jar nogui
+# Ensure Minecraft server is running on localhost:25565
+# For local server:
+java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
 
-## Использование
+Usage
 
-### Базовый запуск
+Basic Start
 
 ```bash
 npm start
 ```
 
-### Запуск в режиме разработки (автоперезагрузка)
+Development Mode (auto-restart)
 
 ```bash
 npm run dev
 ```
 
-## Конфигурация
+Configuration
 
-### Настройка подключения
+Connection Settings
 
-Отредактируйте `config/botConfig.js`:
+Edit config/botConfig.js:
 
 ```javascript
 export const botConfig = {
   connection: {
-    host: 'localhost',        // IP сервера
-    port: 25565,              // Порт сервера
-    username: 'MinecraftAI',   // Имя бота
-    version: '1.16.5'         // Версия Minecraft
+    host: 'localhost',   // Server IP
+    port: 25565,         // Server port
+    username: 'MinecraftAI', // Bot name
+    version: '1.16.5'    // Minecraft version
   }
 };
 ```
 
-### Установка личности
+Personality Setup
 
-Отредактируйте `src/bot.js` (в функции `main()`):
+Edit src/bot.js (in the main() function):
 
 ```javascript
 bot.setPersonality({
-  personality_name: 'Alex',  // Имя бота
-  personality_description: 'Опытный исследователь',
-  speech_style: 'friendly',   // Стиль речи
+  personality_name: 'Alex',
+  personality_description: 'Experienced explorer',
+  speech_style: 'friendly',
   traits: {
-    friendliness: 0.8,   // Дружелюбность (0-1)
-    curiosity: 0.9,      // Любознательность
-    confidence: 0.7,     // Уверенность
-    cautiousness: 0.4,   // Осторожность
-    creativity: 0.6      // Творчество
+    friendliness: 0.8,
+    curiosity: 0.9,
+    confidence: 0.7,
+    cautiousness: 0.4,
+    creativity: 0.6
   }
 });
 ```
 
-#### Доступные стили речи:
-- **friendly** - дружелюбный, энтузиастичный
-- **formal** - формальный, профессиональный
-- **casual** - разговорный, непринуждённый
-- **mysterious** - загадочный, мистический
+Available Speech Styles:
 
-## Структура проекта
+· friendly — friendly, enthusiastic
+· formal — formal, professional
+· casual — casual, laid-back
+· mysterious — mysterious, mystical
+
+Project Structure
 
 ```
 MinecraftBot/
 ├── src/
-│   ├── bot.js                    # Главный файл бота
+│   ├── bot.js                    # Main bot file
 │   ├── systems/
-│   │   ├── PersonalitySystem.js  # Управление личностью
-│   │   ├── ChatSystem.js         # Система общения
-│   │   └── WorldInteractionSystem.js  # Взаимодействие с миром
+│   │   ├── PersonalitySystem.js  # Personality management
+│   │   ├── ChatSystem.js         # Communication system
+│   │   └── WorldInteractionSystem.js # World interaction
 │   ├── ai/
-│   │   └── LearningSystem.js     # Q-Learning алгоритм
+│   │   └── LearningSystem.js     # Q-Learning algorithm
 │   └── utils/
-│       └── Logger.js             # Логирование
+│       └── Logger.js             # Logging
 ├── config/
-│   └── botConfig.js              # Конфигурация
+│   └── botConfig.js              # Configuration
 ├── data/
-│   ├── personality.db            # БД личности
-│   └── learning.db               # БД знаний
+│   ├── personality.db            # Personality database
+│   └── learning.db               # Knowledge database
 ├── logs/
-│   └── bot.log                   # Файл логов
+│   └── bot.log                   # Log file
 └── package.json
 ```
 
-## Ключевые компоненты
+Key Components
 
-### PersonalitySystem
-Управляет личностью, эмоциями и памятью бота.
+PersonalitySystem
+
+Manages the bot's personality, emotions, and memory.
 
 ```javascript
 const personality = new PersonalitySystem();
-personality.updateEmotion('happiness', 0.1);  // Увеличить счастье на 10%
-personality.addMemory({ type: 'event', ... }); // Сохранить событие
-personality.addFavoriteActivity('mining');     // Добавить любимое действие
+personality.updateEmotion('happiness', 0.1); // Increase happiness by 10%
+personality.addMemory({ type: 'event', ... }); // Save an event
+personality.addFavoriteActivity('mining'); // Add a favorite action
 ```
 
-### LearningSystem
-Реализует обучение с подкреплением.
+LearningSystem
+
+Implements reinforcement learning.
 
 ```javascript
 const learning = new LearningSystem();
@@ -155,8 +162,9 @@ const action = learning.chooseAction(state, possibleActions);
 learning.recordExperience(state, action, reward, nextState, nextActions);
 ```
 
-### WorldInteractionSystem
-Управляет взаимодействием с миром.
+WorldInteractionSystem
+
+Manages world interaction.
 
 ```javascript
 const world = new WorldInteractionSystem(bot, learning, personality);
@@ -166,8 +174,9 @@ await world.breakBlock(block);
 const state = world.getWorldState();
 ```
 
-### ChatSystem
-Генерирует сообщения в чате.
+ChatSystem
+
+Generates chat messages.
 
 ```javascript
 const chat = new ChatSystem(personality);
@@ -175,44 +184,42 @@ chat.sendChat(bot, chat.generateGreeting());
 chat.sendChat(bot, chat.generateEmotionalMessage());
 ```
 
-## Логирование
+Logging
 
-Все события логируются в `logs/bot.log` и в консоль:
-
-```
-[10:30:45] [INFO] Инициализация бота Minecraft...
-[10:30:46] [SUCCESS] Системы инициализированы
-[10:30:47] [SUCCESS] Бот подключился как MinecraftAI
-[10:31:00] [INFO] [CHAT] Player: Привет!
-```
-
-## Развитие навыков
-
-Бот **автоматически обучается** во время игры:
-
-1. **Исследование** (20% случайных действий) - бот пробует новые действия
-2. **Обучение** (80% лучших действий) - использует изученные стратегии
-3. **Сохранение** - периодически сохраняет знания в БД
-4. **Адаптация** - со временем уменьшает исследование, становясь более эффективным
-
-## Команды в чате
-
-Игроки могут взаимодействовать с ботом в чате:
+All events are logged to logs/bot.log and the console:
 
 ```
-/say Привет!        → Бот ответит приветствием
-/say как дела?      → Бот сообщит статус
-/say спасибо        → Бот выразит признательность
+[10:30:45] [INFO] Initializing Minecraft bot...
+[10:30:46] [SUCCESS] Systems initialized
+[10:30:47] [SUCCESS] Bot connected as MinecraftAI
+[10:31:00] [INFO] [CHAT] Player: Hello!
 ```
 
-## Примеры использования
+Skill Development
 
-### Пример 1: Создание дружелюбного бота
+The bot learns automatically during gameplay:
+
+1. Exploration (20% random actions) — bot tries new actions
+2. Learning (80% best actions) — uses learned strategies
+3. Saving — periodically saves knowledge to the database
+4. Adaptation — gradually reduces exploration, becoming more efficient over time
+
+Chat Commands
+
+Players can interact with the bot in chat:
+
+· /say Hello! → Bot responds with a greeting
+· /say how are you? → Bot reports its status
+· /say thank you → Bot expresses gratitude
+
+Usage Examples
+
+Example 1: Friendly Bot
 
 ```javascript
 bot.setPersonality({
   personality_name: 'Friendly Alex',
-  personality_description: 'Очень дружелюбный помощник',
+  personality_description: 'Very friendly helper',
   speech_style: 'friendly',
   traits: {
     friendliness: 0.95,
@@ -224,12 +231,12 @@ bot.setPersonality({
 });
 ```
 
-### Пример 2: Создание серьёзного бота
+Example 2: Serious Bot
 
 ```javascript
 bot.setPersonality({
   personality_name: 'Commander',
-  personality_description: 'Опытный командир экспедиции',
+  personality_description: 'Experienced expedition commander',
   speech_style: 'formal',
   traits: {
     friendliness: 0.3,
@@ -241,11 +248,12 @@ bot.setPersonality({
 });
 ```
 
-## Отладка
+Debugging
 
-### Включить режим отладки
+Enable Debug Mode
 
-В `config/botConfig.js`:
+In config/botConfig.js:
+
 ```javascript
 logging: {
   debug: true,
@@ -253,44 +261,46 @@ logging: {
 }
 ```
 
-### Проверить статус бота
+Check Bot Status
 
-Бот выводит полный статус каждые 100 тиков (100 секунд):
+The bot outputs a full status every 100 ticks (100 seconds):
+
 ```
-СТАТУС: Здоровье=20.0, Голод=20, Эмоции=happiness: 55%, excitement: 45%
-ОБУЧЕНИЕ: Состояний=45, Записей=892, Исследование=8.5%
+STATUS: Health=20.0, Hunger=20, Emotions=happiness: 55%, excitement: 45%
+LEARNING: States=45, Records=892, Exploration=8.5%
 ```
 
-## Ограничения и известные проблемы
+Limitations and Known Issues
 
-1. **Навигация** - простой алгоритм, может застревать на препятствиях
-2. **Боевые навыки** - базовая система атаки
-3. **Строительство** - простая логика размещения блоков
-4. **Память** - ограничена 1000 записями для производительности
+1. Navigation — simple algorithm, may get stuck on obstacles
+2. Combat Skills — basic attack system
+3. Building — simple block placement logic
+4. Memory — limited to 1000 records for performance
 
-## Возможные улучшения
+Possible Improvements
 
-- [ ] Улучшенная навигация с поиском пути
-- [ ] Система целей и планирования
-- [ ] Работа в команде с другими ботами
-- [ ] Система создания рецептов
-- [ ] Более сложное боевое мастерство
-- [ ] Взаимодействие с интерфейсом (сундуки, верстаки)
-- [ ] Спавнинг у кровати
-- [ ] Система торговли
+· Improved navigation with pathfinding
+· Goal and planning system
+· Teamwork with other bots
+· Recipe system
+· More advanced combat skills
+· GUI interaction (chests, crafting tables)
+· Bed spawning
+· Trading system
 
-## Лицензия
+License
 
-MIT  
-Авторское право (c) 2025 [AmiRus-C](https://github.com/AmiRus-C) (Nicshuz_)
+MIT
+Copyright (c) 2025 AmiRus-C (Nicshuz_)
 
-## Поддержка и профиль
+Support and Profile
 
-Если у вас есть вопросы или предложения:
-- Посетите профиль автора: https://github.com/AmiRus-C
-- Никнейм: `Nicshuz_`
-- Пожалуйста, создавайте issue в репозитории
+For questions or suggestions:
+
+· Author profile: https://github.com/AmiRus-C
+· Nickname: Nicshuz_
+· Please create an issue in the repository
 
 ---
 
-**Наслаждайтесь игрой с вашим ботом! 🎮**
+Enjoy playing with your bot!
